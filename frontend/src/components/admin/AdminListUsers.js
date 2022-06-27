@@ -1,0 +1,132 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsers } from "../../JS/actions/userActions";
+import "./adminListUsers.css";
+
+const AdminListUsers = () => {
+  const users = useSelector((state) => state.userReducer.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, []);
+
+  return (
+    <div className="container-xl">
+      <div className="table-responsive">
+        <div className="table-wrapper">
+          <div className="table-title">
+            <div className="row">
+              <div className="col-sm-5">
+                <h2>
+                  User <b>Management</b>
+                </h2>
+              </div>
+              <div className="col-sm-7">
+                <a href="#" className="btn btn-secondary">
+                  <i className="material-icons"></i> <span>Add New User</span>
+                </a>
+                <a href="#" className="btn btn-secondary">
+                  <i className="material-icons"></i>{" "}
+                  <span>Export to Excel</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <table className="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Date Created</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a href="#">
+                    <img
+                      src="/examples/images/avatar/1.jpg"
+                      className="avatar"
+                      alt="Avatar"
+                    />{" "}
+                    Michael Holz
+                  </a>
+                </td>
+                <td>04/10/2013</td>
+                <td>Admin</td>
+                <td>
+                  <span className="status text-success">•</span> Active
+                </td>
+                <td>
+                  <a
+                    href="#"
+                    className="settings"
+                    title="Settings"
+                    data-toggle="tooltip"
+                  >
+                    <i className="material-icons"></i>
+                  </a>
+                  <a
+                    href="#"
+                    className="delete"
+                    title="Delete"
+                    data-toggle="tooltip"
+                  >
+                    <i className="material-icons"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="clearfix">
+            {/* <div className="hint-text">
+              Showing <b>5</b> out of <b>25</b> entries
+            </div> */}
+            {/* <ul className="pagination">
+              <li className="page-item disabled">
+                <a href="#">Previous</a>
+              </li>
+              <li className="page-item">
+                <a href="#" className="page-link">
+                  1
+                </a>
+              </li>
+              <li className="page-item">
+                <a href="#" className="page-link">
+                  2
+                </a>
+              </li>
+              <li className="page-item active">
+                <a href="#" className="page-link">
+                  3
+                </a>
+              </li>
+              <li className="page-item">
+                <a href="#" className="page-link">
+                  4
+                </a>
+              </li>
+              <li className="page-item">
+                <a href="#" className="page-link">
+                  5
+                </a>
+              </li>
+              <li className="page-item">
+                <a href="#" className="page-link">
+                  Next
+                </a>
+              </li>
+            </ul> */}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminListUsers;
