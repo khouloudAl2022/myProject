@@ -200,3 +200,7 @@ table.table .avatar {
         display: flex;
     }
 }
+.action{
+    display: flex;
+    justify-content: space-between;
+}
