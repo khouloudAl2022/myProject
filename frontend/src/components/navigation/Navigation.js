@@ -17,7 +17,7 @@ const Navigation = () => {
           <Container>
             <img src={k} alt="jj" width="50px" />
             <Navbar.Brand as={Link} to="/home" style={{ marginLeft: "0%" }}>
-              rhabti
+              koVisit
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -50,7 +50,7 @@ const Navigation = () => {
           <Container>
             <img src={k} alt="jj" width="50px" />
             <Navbar.Brand as={Link} to="/home" style={{ marginLeft: "-4px" }}>
-              rhabti
+              OutaIAuto
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">

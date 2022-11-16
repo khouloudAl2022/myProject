@@ -1,62 +1,55 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'poppins','sans-serif';
+body {
+    background: rgb(81, 30, 92)
 }
-body{
-
-    
+.con{
+    margin-top: 8%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
 }
-.cont{
-    width:100%;
-    height: 100vh;
-    background-image: url(../images/background.png);
-    background-size: cover,contain;
-    background-position: center;
-    position: relative;
+.name-div{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
-.profile-box{
-   
-height:100%;
-width:50%;
-background:#ff574a;
-text-align: center;
-padding:60px 150px;
-margin-top: 20%;
-color:#fff;
-position: relative;
-border-radius: 500px;
 
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
 }
-.menu-icon{
-    width:25px;
-    position: absolute;
-    left: 40px;
-    top:40px;
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
 }
-.setting-icon{
-    width:25px;
-    position: absolute;
-    right: 40px;
-    top:40px;
+
+.profile-button:hover {
+    background: #682773
 }
-.profile-pic{
-    width: 150px;
-    /* height: 100%; */
-    border-radius: 50%;
-    background: #fff;
-padding: 6px;
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
 }
-.tasks{
-    margin-top:50px;
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
 }
-.contt{
-    margin-top:3%;
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
 }
-#edit{
-    margin-left: 50%;
+
+.labels {
+    font-size: 11px;
+    font-weight:bold
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
 }

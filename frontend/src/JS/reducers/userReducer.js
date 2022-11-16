@@ -7,6 +7,7 @@ import {
   GET_CURRENT,
   LOGOUT,
   EDIT_USER,
+  DELETE_USER,
 } from "../actionTypes/userAcTypes";
 
 const initialState = {
@@ -57,6 +58,8 @@ const userReducer = (state = initialState, { type, payload }) => {
           e.id == payload.id ? payload : payload.updatedUser
         ),
       };
+    case DELETE_USER:
+      return { ...state, user: state.user.filter((e) => e._id !== payload.id) };
     default:
       return state;
   }

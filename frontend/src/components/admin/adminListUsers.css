@@ -196,8 +196,9 @@ table.table .avatar {
     font-size: 13px;
 }
 @media only screen and (min-width: 1024px) {
-    .container header .header-nav-area #nav_container {
+    .container-x1  {
         display: flex;
+        flex-wrap: wrap;
     }
 }
 .action{

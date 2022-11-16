@@ -1,4 +1,5 @@
 import {
+  DELETE_USER,
   EDIT_USER,
   FAIL,
   GET_CURRENT,
@@ -84,8 +85,18 @@ export const EditUser = (id, updatedUser) => async (dispatch) => {
   dispatch({ type: LOADING });
 
   try {
-    const res = await axios.put(`/api/user/putuser${id}`, updatedUser);
-    dispatch({ type: EDIT_USER, payload: res.data });
+    await axios.put(`/api/user/putuser${id}`, updatedUser);
+    dispatch(getUsers());
+  } catch (error) {
+    dispatch({ type: FAIL, payload: error.response.data });
+  }
+};
+
+export const deleteUser = (id) => async (dispatch) => {
+  dispatch({ type: LOADING });
+  try {
+    await axios.delete(`/api/user/deleteuser/${id}`);
+    dispatch(getUsers());
   } catch (error) {
     dispatch({ type: FAIL, payload: error.response.data });
   }
